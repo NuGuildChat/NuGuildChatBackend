@@ -37,7 +37,7 @@ public class SQLMessageDAO implements MessageDAO {
                         now,
                         now,
                         message.getAuthorUUID(),
-                        message.getChannelID(),
+                        message.getChannelUUID(),
                         message.getContents()
                 )
                 .execute();

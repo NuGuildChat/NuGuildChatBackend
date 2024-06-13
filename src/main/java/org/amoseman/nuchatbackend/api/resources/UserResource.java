@@ -1,59 +1,55 @@
 package org.amoseman.nuchatbackend.api.resources;
 
-import io.dropwizard.auth.Auth;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.amoseman.nuchatbackend.dao.UserDAO;
-import org.amoseman.nuchatbackend.dao.exception.account.AccountExistsException;
-import org.amoseman.nuchatbackend.dao.exception.user.UserAuthorizationException;
 import org.amoseman.nuchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuchatbackend.dao.exception.user.UserExistsException;
 import org.amoseman.nuchatbackend.dao.exception.user.UserModificationException;
 import org.amoseman.nuchatbackend.pojo.user.User;
-import org.amoseman.nuchatbackend.pojo.user.UserRecord;
-import org.amoseman.nuchatbackend.pojo.user.UserUpdate;
-import org.amoseman.nuchatbackend.service.UserService;
-import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
 
 import java.util.UUID;
 
-@Path("/account")
+@Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
-    private final UserService userService;
+    private final UserDAO userDAO;
 
-    public UserResource(UserService userService) {
-        this.userService = userService;
+    public UserResource(UserDAO userDAO) {
+        this.userDAO = userDAO;
     }
 
     @POST
-    public Response signup(UserPrincipal user) {
+    public Response createUser(String name) {
+        long now = System.currentTimeMillis();
+        String uuid = UUID.randomUUID().toString();
+        User user = new User(uuid, now, now, name);
         try {
-            userService.create(user);
+            userDAO.create(user);
+            return Response.ok().build();
         }
         catch (UserExistsException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok().build();
     }
 
     @PUT
-    public Response update(@Auth UserPrincipal principal, UserUpdate update) {
+    public Response updateUser(User user) {
         try {
-            userService.update(principal, update);
+            userDAO.update(user);
             return Response.ok().build();
         }
-        catch (UserModificationException | UserAuthorizationException | UserDoesNotExistException e) {
+        catch (UserModificationException | UserDoesNotExistException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
 
     @GET
-    @Path("/{username}")
-    public Response get(@Auth UserPrincipal principal, @PathParam("username") String username) {
+    @Path("/{uuid}")
+    public Response getUser(@PathParam("uuid") String uuid) {
         try {
-            return Response.ok(userService.get(username)).build();
+            return Response.ok(userDAO.get(uuid)).build();
         }
         catch (UserDoesNotExistException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
@@ -61,19 +57,7 @@ public class UserResource {
     }
 
     @GET
-    public Response get(@Auth UserPrincipal principal) {
-        return Response.ok(userService.getAll()).build();
-    }
-
-    @DELETE
-    @Path("/{username}")
-    public Response delete(@Auth UserPrincipal principal, @PathParam("username") String username) {
-        try {
-            userService.delete(principal, username);
-            return Response.ok().build();
-        }
-        catch (UserAuthorizationException | UserDoesNotExistException e) {
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
+    public Response getAllUsers() {
+        return Response.ok(userDAO.getAll()).build();
     }
 }

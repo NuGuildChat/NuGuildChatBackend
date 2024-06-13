@@ -1,19 +1,19 @@
 package org.amoseman.nuchatbackend.pojo.user;
 
 public class UserRecord extends User {
-    private final String username;
+    private final String uuid;
     private final long created;
     private final long updated;
 
-    public UserRecord(String name, String pronouns, String username, long created, long updated) {
+    public UserRecord(String name, String pronouns, String uuid, long created, long updated) {
         super(name, pronouns);
-        this.username = username;
+        this.uuid = uuid;
         this.created = created;
         this.updated = updated;
     }
 
     public String getUUID() {
-        return username;
+        return uuid;
     }
 
     public long getCreated() {

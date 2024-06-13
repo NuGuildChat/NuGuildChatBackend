@@ -1,7 +1,6 @@
 package org.amoseman.nuchatbackend.dao;
 
 import com.google.common.collect.ImmutableList;
-import org.amoseman.nuchatbackend.api.resources.MessageResource;
 import org.amoseman.nuchatbackend.dao.exception.message.MessageDoesNotExistException;
 import org.amoseman.nuchatbackend.pojo.message.Message;
 import org.amoseman.nuchatbackend.pojo.message.MessageRecord;
@@ -11,6 +10,5 @@ public interface MessageDAO {
     void create(Message message);
     void update(MessageUpdate messageUpdate) throws MessageDoesNotExistException;
     void delete(long id) throws MessageDoesNotExistException;
-    MessageRecord get(long id) throws MessageDoesNotExistException;
-    ImmutableList<MessageRecord> getAll(long channelID);
+    ImmutableList<MessageRecord> getAll(String channelUUID);
 }

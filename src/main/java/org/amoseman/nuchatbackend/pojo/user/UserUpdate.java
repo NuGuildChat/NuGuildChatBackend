@@ -1,22 +1,22 @@
 package org.amoseman.nuchatbackend.pojo.user;
 
 public class UserUpdate {
-    private final String username;
-    private final String displayName;
+    private final String uuid;
+    private final String name;
     private final String pronouns;
 
-    public UserUpdate(String username, String displayName, String pronouns) {
-        this.username = username;
-        this.displayName = displayName;
+    public UserUpdate(String uuid, String name, String pronouns) {
+        this.uuid = uuid;
+        this.name = name;
         this.pronouns = pronouns;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUUID() {
+        return uuid;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getName() {
+        return name;
     }
 
     public String getPronouns() {

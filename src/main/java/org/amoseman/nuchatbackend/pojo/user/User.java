@@ -1,16 +1,16 @@
 package org.amoseman.nuchatbackend.pojo.user;
 
 public class User {
-    private final String displayName;
+    private final String name;
     private final String pronouns;
 
-    public User(String displayName, String pronouns) {
-        this.displayName = displayName;
+    public User(String name, String pronouns) {
+        this.name = name;
         this.pronouns = pronouns;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getName() {
+        return name;
     }
 
     public String getPronouns() {
