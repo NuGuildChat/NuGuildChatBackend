@@ -12,6 +12,7 @@ import org.amoseman.nuchatbackend.dao.MessageDAO;
 import org.amoseman.nuchatbackend.dao.sql.DatabaseConnection;
 import org.amoseman.nuchatbackend.dao.sql.SQLMessageDAO;
 import org.amoseman.nuchatbackend.service.ChannelService;
+import org.amoseman.nuchatbackend.service.MessageService;
 import org.amoseman.nuchatbackend.service.auth.UserAuthenticator;
 import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
 
@@ -36,9 +37,10 @@ public class NuGuildChatApplication extends Application<NuGuildChatConfiguration
         ChannelDAO channelDAO = null; // todo
 
         // todo: message service
+        MessageService messageService = new MessageService(messageDAO);
         ChannelService channelService = new ChannelService(channelDAO);
 
-        MessageResource messageResource = new MessageResource(messageDAO);
+        MessageResource messageResource = new MessageResource(messageService);
         ChannelResource channelResource = new ChannelResource(channelService);
 
         environment.jersey().register(messageResource);

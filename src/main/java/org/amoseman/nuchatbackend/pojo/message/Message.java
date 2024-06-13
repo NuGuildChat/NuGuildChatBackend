@@ -2,12 +2,12 @@ package org.amoseman.nuchatbackend.pojo.message;
 
 public class Message {
     private final String authorUUID;
-    private final String channelUUID;
+    private final long channelID;
     private final String contents;
 
-    public Message(String authorUUID, String channelUUID, String contents) {
+    public Message(String authorUUID, long channelID, String contents) {
         this.authorUUID = authorUUID;
-        this.channelUUID = channelUUID;
+        this.channelID = channelID;
         this.contents = contents;
     }
 
@@ -15,8 +15,8 @@ public class Message {
         return authorUUID;
     }
 
-    public String getChannelUUID() {
-        return channelUUID;
+    public long getChannelID() {
+        return channelID;
     }
 
     public String getContents() {
