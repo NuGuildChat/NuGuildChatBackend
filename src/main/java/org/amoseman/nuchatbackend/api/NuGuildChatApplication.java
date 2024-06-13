@@ -16,9 +16,9 @@ import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
 
 import java.security.SecureRandom;
 
-public class NuChatApplication extends Application<NuChatConfiguration> {
+public class NuGuildChatApplication extends Application<NuGuildChatConfiguration> {
     @Override
-    public void run(NuChatConfiguration configuration, Environment environment) throws Exception {
+    public void run(NuGuildChatConfiguration configuration, Environment environment) throws Exception {
         SecureRandom random = new SecureRandom();
         DatabaseConnection connection = new DatabaseConnection(configuration.getDatabaseURL());
 

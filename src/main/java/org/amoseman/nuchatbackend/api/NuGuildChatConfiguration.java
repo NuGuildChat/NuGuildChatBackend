@@ -2,12 +2,12 @@ package org.amoseman.nuchatbackend.api;
 
 import io.dropwizard.core.Configuration;
 
-public class NuChatConfiguration extends Configuration {
+public class NuGuildChatConfiguration extends Configuration {
     private final String databaseURL;
     private final String databaseUsername;
     private final String databasePassword;
 
-    public NuChatConfiguration(String databaseURL, String databaseUsername, String databasePassword) {
+    public NuGuildChatConfiguration(String databaseURL, String databaseUsername, String databasePassword) {
         this.databaseURL = databaseURL;
         this.databaseUsername = databaseUsername;
         this.databasePassword = databasePassword;
