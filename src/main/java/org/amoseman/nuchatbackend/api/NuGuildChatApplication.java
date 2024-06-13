@@ -1,6 +1,7 @@
 package org.amoseman.nuchatbackend.api;
 
 import io.dropwizard.auth.AuthDynamicFeature;
+import io.dropwizard.auth.AuthValueFactoryProvider;
 import io.dropwizard.auth.basic.BasicCredentialAuthFilter;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Environment;
@@ -29,6 +30,7 @@ public class NuGuildChatApplication extends Application<NuGuildChatConfiguration
                                 .setAuthenticator(userAuthenticator)
                                 .buildAuthFilter()
                 ));
+        environment.jersey().register(new AuthValueFactoryProvider.Binder<>(UserPrincipal.class));
 
         MessageDAO messageDAO = new SQLMessageDAO(connection);
         ChannelDAO channelDAO = null; // todo
