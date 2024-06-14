@@ -1,20 +1,20 @@
-package org.amoseman.nuchatbackend.api;
+package org.amoseman.nuguildchatbackend.api;
 
 import io.dropwizard.auth.AuthDynamicFeature;
 import io.dropwizard.auth.AuthValueFactoryProvider;
 import io.dropwizard.auth.basic.BasicCredentialAuthFilter;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Environment;
-import org.amoseman.nuchatbackend.api.resources.ChannelResource;
-import org.amoseman.nuchatbackend.api.resources.MessageResource;
-import org.amoseman.nuchatbackend.dao.ChannelDAO;
-import org.amoseman.nuchatbackend.dao.MessageDAO;
-import org.amoseman.nuchatbackend.dao.sql.DatabaseConnection;
-import org.amoseman.nuchatbackend.dao.sql.SQLMessageDAO;
-import org.amoseman.nuchatbackend.service.ChannelService;
-import org.amoseman.nuchatbackend.service.MessageService;
-import org.amoseman.nuchatbackend.service.auth.UserAuthenticator;
-import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
+import org.amoseman.nuguildchatbackend.api.resources.ChannelResource;
+import org.amoseman.nuguildchatbackend.api.resources.MessageResource;
+import org.amoseman.nuguildchatbackend.dao.ChannelDAO;
+import org.amoseman.nuguildchatbackend.dao.MessageDAO;
+import org.amoseman.nuguildchatbackend.dao.sql.DatabaseConnection;
+import org.amoseman.nuguildchatbackend.dao.sql.SQLMessageDAO;
+import org.amoseman.nuguildchatbackend.service.ChannelService;
+import org.amoseman.nuguildchatbackend.service.MessageService;
+import org.amoseman.nuguildchatbackend.service.auth.UserAuthenticator;
+import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 
 import java.security.SecureRandom;
 

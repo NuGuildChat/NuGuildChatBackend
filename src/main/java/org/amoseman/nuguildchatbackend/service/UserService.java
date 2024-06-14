@@ -1,13 +1,13 @@
-package org.amoseman.nuchatbackend.service;
+package org.amoseman.nuguildchatbackend.service;
 
-import org.amoseman.nuchatbackend.dao.UserDAO;
-import org.amoseman.nuchatbackend.dao.exception.user.UserAuthorizationException;
-import org.amoseman.nuchatbackend.dao.exception.user.UserDoesNotExistException;
-import org.amoseman.nuchatbackend.dao.exception.user.UserExistsException;
-import org.amoseman.nuchatbackend.dao.exception.user.UserModificationException;
-import org.amoseman.nuchatbackend.pojo.user.UserRecord;
-import org.amoseman.nuchatbackend.pojo.user.UserUpdate;
-import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
+import org.amoseman.nuguildchatbackend.dao.UserDAO;
+import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationException;
+import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
+import org.amoseman.nuguildchatbackend.dao.exception.user.UserExistsException;
+import org.amoseman.nuguildchatbackend.dao.exception.user.UserModificationException;
+import org.amoseman.nuguildchatbackend.pojo.user.UserRecord;
+import org.amoseman.nuguildchatbackend.pojo.user.UserUpdate;
+import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 
 import java.util.List;
 

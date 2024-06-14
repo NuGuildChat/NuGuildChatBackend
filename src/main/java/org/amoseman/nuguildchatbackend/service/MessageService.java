@@ -1,16 +1,16 @@
-package org.amoseman.nuchatbackend.service;
+package org.amoseman.nuguildchatbackend.service;
 
 import com.google.common.collect.ImmutableList;
-import org.amoseman.nuchatbackend.dao.ChannelDAO;
-import org.amoseman.nuchatbackend.dao.MessageDAO;
-import org.amoseman.nuchatbackend.dao.exception.channel.ChannelDoesNotExistException;
-import org.amoseman.nuchatbackend.dao.exception.message.MessageDoesNotExistException;
-import org.amoseman.nuchatbackend.dao.exception.user.UserAuthorizationException;
-import org.amoseman.nuchatbackend.pojo.channel.ChannelRecord;
-import org.amoseman.nuchatbackend.pojo.message.Message;
-import org.amoseman.nuchatbackend.pojo.message.MessageRecord;
-import org.amoseman.nuchatbackend.pojo.message.MessageUpdate;
-import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
+import org.amoseman.nuguildchatbackend.dao.ChannelDAO;
+import org.amoseman.nuguildchatbackend.dao.MessageDAO;
+import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelDoesNotExistException;
+import org.amoseman.nuguildchatbackend.dao.exception.message.MessageDoesNotExistException;
+import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationException;
+import org.amoseman.nuguildchatbackend.pojo.channel.ChannelRecord;
+import org.amoseman.nuguildchatbackend.pojo.message.Message;
+import org.amoseman.nuguildchatbackend.pojo.message.MessageRecord;
+import org.amoseman.nuguildchatbackend.pojo.message.MessageUpdate;
+import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 
 public class MessageService {
     private final MessageDAO messageDAO;

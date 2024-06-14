@@ -1,4 +1,4 @@
-package org.amoseman.nuchatbackend.api;
+package org.amoseman.nuguildchatbackend.api;
 
 import io.dropwizard.core.Configuration;
 

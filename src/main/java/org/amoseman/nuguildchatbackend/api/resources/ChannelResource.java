@@ -1,16 +1,17 @@
 package org.amoseman.nuguildchatbackend.api.resources;
 
+import io.dropwizard.auth.Auth;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelDoesNotExistException;
-import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelExistsException;
-import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelModificationException;
 import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelNameInUseException;
+import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuguildchatbackend.pojo.channel.Channel;
-import org.amoseman.nuguildchatbackend.pojo.user.User;
+import org.amoseman.nuguildchatbackend.pojo.channel.ChannelUpdate;
 import org.amoseman.nuguildchatbackend.service.ChannelService;
+import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 
 @Path("/channel")
 @Produces(MediaType.APPLICATION_JSON)
@@ -27,43 +28,43 @@ public class ChannelResource {
             channelService.create(channel);
             return Response.ok().build();
         }
-        catch (ChannelExistsException | ChannelNameInUseException e) {
+        catch (ChannelNameInUseException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
 
     @PUT
-    public Response updateChannel(Channel channel) {
+    public Response updateChannel(@Auth UserPrincipal userPrincipal, ChannelUpdate channel) {
         try {
-            channelDAO.update(channel);
+            channelService.update(userPrincipal.getName(), channel);
             return Response.ok().build();
         }
-        catch (ChannelDoesNotExistException | ChannelModificationException e) {
+        catch (ChannelDoesNotExistException | UserAuthorizationException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
 
     @GET
-    @Path("/{uuid}")
-    public Response getChannel(@PathParam("uuid") String uuid) {
+    @Path("/{id}")
+    public Response getChannel(@Auth UserPrincipal userPrincipal, @PathParam("uuid") long id) {
         try {
-            return Response.ok(channelDAO.get(uuid)).build();
+            return Response.ok(channelService.get(userPrincipal.getName(), id)).build();
         }
-        catch (ChannelDoesNotExistException e) {
-            return Response.status(Response.Status.BAD_REQUEST).build();
+        catch (UserAuthorizationException | ChannelDoesNotExistException e) {
+            throw new RuntimeException(e);
         }
     }
 
     @GET
     @Path("/open")
     public Response getOpenChannels() {
-        return Response.ok(channelDAO.getIfOpen()).build();
+        return Response.ok(channelService.getIfOpen()).build();
     }
 
     @GET
-    public Response getChannelsIfMember(User user) {
+    public Response getChannelsIfMember(@Auth UserPrincipal userPrincipal) {
         try {
-            return Response.ok(channelDAO.getIfMember(user)).build();
+            return Response.ok(channelService.getIfMember(userPrincipal.getName())).build();
         }
         catch (UserDoesNotExistException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();

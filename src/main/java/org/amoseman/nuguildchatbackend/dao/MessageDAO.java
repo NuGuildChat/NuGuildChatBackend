@@ -10,5 +10,6 @@ public interface MessageDAO {
     void create(Message message);
     void update(MessageUpdate messageUpdate) throws MessageDoesNotExistException;
     void delete(long id) throws MessageDoesNotExistException;
-    ImmutableList<MessageRecord> getAll(String channelUUID);
+    MessageRecord get(long id) throws MessageDoesNotExistException;
+    ImmutableList<MessageRecord> getAll(long channelID);
 }
