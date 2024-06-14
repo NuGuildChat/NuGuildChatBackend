@@ -14,5 +14,5 @@ public interface ChannelDAO {
     void delete(long id) throws ChannelDoesNotExistException;
     ChannelRecord get(long id) throws ChannelDoesNotExistException;
     ImmutableList<ChannelRecord> getIfOpen();
-    ImmutableList<ChannelRecord> getIfMember(String userUUID) throws UserDoesNotExistException;
+    ImmutableList<ChannelRecord> getIfMember(String username);
 }

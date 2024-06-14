@@ -22,14 +22,14 @@ public class ChannelService {
     }
     public void update(String userUUID, ChannelUpdate channel) throws ChannelDoesNotExistException, UserAuthorizationException {
         ChannelRecord current = channelDAO.get(channel.getID());
-        if (!userUUID.equals(current.getAdminUUID())) {
+        if (!userUUID.equals(current.getAdminUsername())) {
             throw new UserAuthorizationException();
         }
         channelDAO.update(channel);
     }
     public void delete(String userUUID, long id) throws ChannelDoesNotExistException, UserAuthorizationException {
         ChannelRecord current = channelDAO.get(id);
-        if (!userUUID.equals(current.getAdminUUID())) {
+        if (!userUUID.equals(current.getAdminUsername())) {
             throw new UserAuthorizationException();
         }
         channelDAO.delete(id);
@@ -46,7 +46,7 @@ public class ChannelService {
         return channelDAO.getIfOpen();
     }
 
-    public ImmutableList<ChannelRecord> getIfMember(String userUUID) throws UserDoesNotExistException {
+    public ImmutableList<ChannelRecord> getIfMember(String userUUID) {
         return channelDAO.getIfMember(userUUID);
     }
 }

@@ -2,12 +2,12 @@ package org.amoseman.nuguildchatbackend.pojo.channel;
 
 public class Channel {
     private final String name;
-    private final String adminUUID;
+    private final String adminUsername;
     private final boolean closed;
 
-    public Channel(String name, String adminUUID, boolean closed) {
+    public Channel(String name, String adminUsername, boolean closed) {
         this.name = name;
-        this.adminUUID = adminUUID;
+        this.adminUsername = adminUsername;
         this.closed = closed;
     }
 
@@ -15,8 +15,8 @@ public class Channel {
         return name;
     }
 
-    public String getAdminUUID() {
-        return adminUUID;
+    public String getAdminUsername() {
+        return adminUsername;
     }
 
     public boolean isClosed() {

@@ -40,7 +40,7 @@ public class MessageService {
     public void delete(UserPrincipal principal, long id) throws UserAuthorizationException, MessageDoesNotExistException, ChannelDoesNotExistException {
         MessageRecord current = messageDAO.get(id);
         ChannelRecord channel = channelDAO.get(current.getChannelID());
-        if (!(channel.getAdminUUID().equals(principal.getName()) || current.getAuthorUUID().equals(principal.getName()))) {
+        if (!(channel.getAdminUsername().equals(principal.getName()) || current.getAuthorUUID().equals(principal.getName()))) {
             throw new UserAuthorizationException();
         }
         messageDAO.delete(id);

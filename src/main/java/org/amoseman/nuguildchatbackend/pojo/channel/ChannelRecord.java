@@ -8,8 +8,8 @@ public class ChannelRecord extends Channel {
     private final long updated;
     private final ImmutableList<String> members;
 
-    public ChannelRecord(String name, String adminUUID, boolean closed, long id, long created, long updated, ImmutableList<String> members) {
-        super(name, adminUUID, closed);
+    public ChannelRecord(String name, String adminUsername, boolean closed, long id, long created, long updated, ImmutableList<String> members) {
+        super(name, adminUsername, closed);
         this.id = id;
         this.created = created;
         this.updated = updated;

@@ -63,11 +63,6 @@ public class ChannelResource {
 
     @GET
     public Response getChannelsIfMember(@Auth UserPrincipal userPrincipal) {
-        try {
-            return Response.ok(channelService.getIfMember(userPrincipal.getName())).build();
-        }
-        catch (UserDoesNotExistException e) {
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
+        return Response.ok(channelService.getIfMember(userPrincipal.getName())).build();
     }
 }
