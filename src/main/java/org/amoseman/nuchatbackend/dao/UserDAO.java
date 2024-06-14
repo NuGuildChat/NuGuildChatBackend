@@ -12,7 +12,7 @@ import java.util.List;
 public interface UserDAO {
     void create(User user) throws UserExistsException;
     void update(UserUpdate user) throws UserDoesNotExistException, UserModificationException;
-    void delete(String uuid) throws UserDoesNotExistException;
-    UserRecord get(String uuid) throws UserDoesNotExistException;
+    void delete(String username) throws UserDoesNotExistException;
+    UserRecord get(String username) throws UserDoesNotExistException;
     List<UserRecord> getAll();
 }
