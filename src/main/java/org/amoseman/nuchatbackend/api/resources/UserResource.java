@@ -9,38 +9,28 @@ import org.amoseman.nuchatbackend.dao.UserDAO;
 import org.amoseman.nuchatbackend.dao.exception.account.AccountExistsException;
 import org.amoseman.nuchatbackend.dao.exception.user.UserExistsException;
 import org.amoseman.nuchatbackend.pojo.user.User;
+import org.amoseman.nuchatbackend.pojo.user.UserRecord;
+import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
 
 import java.util.UUID;
 
 @Path("/account")
 @Produces(MediaType.APPLICATION_JSON)
-public class AccountResource {
-    private final AccountDAO accountDAO;
+public class UserResource {
     private final UserDAO userDAO;
 
-    public AccountResource(AccountDAO accountDAO, UserDAO userDAO) {
-        this.accountDAO = accountDAO;
+    public UserResource(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 
     @POST
-    public Response signup(String name, String password) {
-        long now = System.currentTimeMillis();
-        String uuid = UUID.randomUUID().toString();
-        Account account = new Account(uuid, password);
-        User user = new User(uuid, now, now, name);
-        try {
-            accountDAO.create(account);
-        }
-        catch (AccountExistsException e) {
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
+    public Response signup(UserPrincipal user) {
         try {
             userDAO.create(user);
         }
         catch (UserExistsException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(uuid).build();
+        return Response.ok().build();
     }
 }
