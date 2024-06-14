@@ -5,14 +5,11 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.amoseman.nuchatbackend.dao.exception.channel.ChannelDoesNotExistException;
-import org.amoseman.nuchatbackend.dao.exception.channel.ChannelExistsException;
-import org.amoseman.nuchatbackend.dao.exception.channel.ChannelModificationException;
 import org.amoseman.nuchatbackend.dao.exception.channel.ChannelNameInUseException;
 import org.amoseman.nuchatbackend.dao.exception.user.UserAuthorizationException;
 import org.amoseman.nuchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuchatbackend.pojo.channel.Channel;
 import org.amoseman.nuchatbackend.pojo.channel.ChannelUpdate;
-import org.amoseman.nuchatbackend.pojo.user.User;
 import org.amoseman.nuchatbackend.service.ChannelService;
 import org.amoseman.nuchatbackend.service.auth.UserPrincipal;
 

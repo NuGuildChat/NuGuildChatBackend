@@ -36,8 +36,7 @@ public class NuGuildChatApplication extends Application<NuGuildChatConfiguration
         MessageDAO messageDAO = new SQLMessageDAO(connection);
         ChannelDAO channelDAO = null; // todo
 
-        // todo: message service
-        MessageService messageService = new MessageService(messageDAO);
+        MessageService messageService = new MessageService(messageDAO, channelDAO);
         ChannelService channelService = new ChannelService(channelDAO);
 
         MessageResource messageResource = new MessageResource(messageService);
