@@ -4,49 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/api/NuChatApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/api/NuChatConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/api/resources/AccountResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/api/resources/ChannelResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/api/resources/MessageResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/api/resources/UserResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/ChannelDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/MessageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/account/AccountDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/account/AccountExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/account/AccountModificationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/channel/ChannelDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/channel/ChannelExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/channel/ChannelModificationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/channel/ChannelNameInUseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/message/MessageDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/message/MessageExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/message/MessageModificationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/user/UserAuthorizationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/user/UserDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/user/UserExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/exception/user/UserModificationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/sql/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/dao/sql/SQLMessageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/channel/Channel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/channel/ChannelRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/channel/ChannelUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/message/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/message/MessageRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/message/MessageUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/user/UserRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/pojo/user/UserUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/service/ChannelService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/service/auth/UserAuthenticator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuchatbackend/service/auth/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/sql/SQLMessageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/sql/SQLMessageDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +37,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -91,7 +52,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/glyphical/Projects/idea_projects/NuGuildChatBackend/src/main/java/org/amoseman&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/home/glyphical/Projects/idea_projects/NuGuildChatBackend/src/main/java/org/amoseman/Main.java&quot;,
@@ -126,6 +87,19 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="NuGuildChatBackend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="NuGuildChatBackend" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -144,11 +118,29 @@
       <option name="project" value="LOCAL" />
       <updated>1718307416009</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1718370348486</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718370348486</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1718370578204</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718370578204</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
 </project>

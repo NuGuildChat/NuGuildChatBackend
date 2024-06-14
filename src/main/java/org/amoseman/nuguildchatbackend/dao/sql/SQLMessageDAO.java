@@ -69,11 +69,24 @@ public class SQLMessageDAO implements MessageDAO {
     }
 
     @Override
-    public ImmutableList<MessageRecord> getAll(String channelUUID) {
+    public MessageRecord get(long id) throws MessageDoesNotExistException {
         Result<Record> result = connection.create()
                 .select()
                 .from(table("messages"))
-                .where(field("channel").eq(channelUUID))
+                .where(field("id").eq(id))
+                .fetch();
+        if (result.isEmpty()) {
+            throw new MessageDoesNotExistException();
+        }
+        return recordAsMessage(result.get(0));
+    }
+
+    @Override
+    public ImmutableList<MessageRecord> getAll(long channelID) {
+        Result<Record> result = connection.create()
+                .select()
+                .from(table("messages"))
+                .where(field("channel").eq(channelID))
                 .fetch();
         List<MessageRecord> messages = new ArrayList<>();
         result.forEach(record -> messages.add(recordAsMessage(record)));
