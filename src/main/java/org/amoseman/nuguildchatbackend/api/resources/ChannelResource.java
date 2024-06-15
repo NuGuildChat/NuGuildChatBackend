@@ -7,7 +7,6 @@ import jakarta.ws.rs.core.Response;
 import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelDoesNotExistException;
 import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelNameInUseException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationException;
-import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuguildchatbackend.pojo.channel.Channel;
 import org.amoseman.nuguildchatbackend.pojo.channel.ChannelUpdate;
 import org.amoseman.nuguildchatbackend.service.ChannelService;

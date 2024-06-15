@@ -4,7 +4,6 @@ import org.amoseman.nuguildchatbackend.dao.UserDAO;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserExistsException;
-import org.amoseman.nuguildchatbackend.dao.exception.user.UserModificationException;
 import org.amoseman.nuguildchatbackend.pojo.user.Signup;
 import org.amoseman.nuguildchatbackend.pojo.user.UserRecord;
 import org.amoseman.nuguildchatbackend.pojo.user.UserUpdate;

@@ -22,7 +22,6 @@ public class MessageService {
         this.channelDAO = channelDAO;
     }
 
-    // todo: implement
     public void create(UserPrincipal principal, Message message) throws UserAuthorizationException {
         if (!message.getAuthor().equals(principal.getName())) {
             throw new UserAuthorizationException();

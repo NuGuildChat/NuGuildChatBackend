@@ -11,8 +11,13 @@ public class UserPrincipal implements Principal {
 
     @Override
     public boolean equals(Object another) {
-        // todo: implement
-        return false;
+        if (null == another) {
+            return false;
+        }
+        if (!(another instanceof UserPrincipal other)) {
+            return false;
+        }
+        return username.equals(other.username);
     }
 
     @Override

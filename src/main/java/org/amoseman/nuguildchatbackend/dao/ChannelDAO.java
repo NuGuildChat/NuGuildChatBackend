@@ -3,7 +3,6 @@ package org.amoseman.nuguildchatbackend.dao;
 import com.google.common.collect.ImmutableList;
 import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelDoesNotExistException;
 import org.amoseman.nuguildchatbackend.dao.exception.channel.ChannelNameInUseException;
-import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuguildchatbackend.pojo.channel.Channel;
 import org.amoseman.nuguildchatbackend.pojo.channel.ChannelRecord;
 import org.amoseman.nuguildchatbackend.pojo.channel.ChannelUpdate;
