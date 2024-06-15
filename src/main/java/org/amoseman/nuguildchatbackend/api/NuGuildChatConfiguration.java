@@ -11,17 +11,11 @@ public class NuGuildChatConfiguration extends Configuration {
     private String databaseUsername;
     @NotEmpty
     private String databasePassword;
-    @NotEmpty
     private int maxUsernameLength;
-    @NotEmpty
     private int maxPasswordLength;
-    @NotEmpty
     private int maxPronounsLength;
-    @NotEmpty
     private int maxMessageLength;
-    @NotEmpty
     private int maxChannelNameLength;
-    @NotEmpty
     private int maxChannelMembers;
 
 
