@@ -25,8 +25,16 @@ public class DatabaseConnection {
     }
 
     private SQLDialect mapDialect(String url) {
-        // todo: implement
-        return null;
+        String[] parts = url.split(":");
+        if (!parts[0].equals("jdbc")) {
+            throw new RuntimeException("Invalid database url");
+        }
+        switch (parts[1]) {
+            case "mariadb" -> {
+                return SQLDialect.MARIADB;
+            }
+            default -> throw new RuntimeException("Database not supported");
+        }
     }
 
     public DSLContext create() {
