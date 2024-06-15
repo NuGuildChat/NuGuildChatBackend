@@ -5,11 +5,12 @@ import org.amoseman.nuguildchatbackend.dao.exception.message.MessageDoesNotExist
 import org.amoseman.nuguildchatbackend.pojo.message.Message;
 import org.amoseman.nuguildchatbackend.pojo.message.MessageRecord;
 import org.amoseman.nuguildchatbackend.pojo.message.MessageUpdate;
+import org.amoseman.nuguildchatbackend.pojo.message.RecentMessagesQuery;
 
 public interface MessageDAO {
     void create(Message message);
     void update(MessageUpdate messageUpdate) throws MessageDoesNotExistException;
     void delete(long id) throws MessageDoesNotExistException;
     MessageRecord get(long id) throws MessageDoesNotExistException;
-    ImmutableList<MessageRecord> getRecent(long channelID, long limit, long offset);
+    ImmutableList<MessageRecord> getRecent(long channelID, RecentMessagesQuery recentMessagesQuery);
 }

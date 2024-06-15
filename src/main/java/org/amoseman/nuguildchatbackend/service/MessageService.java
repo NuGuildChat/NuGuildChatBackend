@@ -10,6 +10,7 @@ import org.amoseman.nuguildchatbackend.pojo.channel.ChannelRecord;
 import org.amoseman.nuguildchatbackend.pojo.message.Message;
 import org.amoseman.nuguildchatbackend.pojo.message.MessageRecord;
 import org.amoseman.nuguildchatbackend.pojo.message.MessageUpdate;
+import org.amoseman.nuguildchatbackend.pojo.message.RecentMessagesQuery;
 import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 
 public class MessageService {
@@ -46,11 +47,11 @@ public class MessageService {
         messageDAO.delete(id);
     }
 
-    public ImmutableList<MessageRecord> getRecent(UserPrincipal principal, long channelID, long limit, long offset) throws UserAuthorizationException, ChannelDoesNotExistException {
+    public ImmutableList<MessageRecord> getRecent(UserPrincipal principal, long channelID, RecentMessagesQuery recentMessagesQuery) throws UserAuthorizationException, ChannelDoesNotExistException {
         ChannelRecord channel = channelDAO.get(channelID);
         if (channel.isClosed() && !channel.getMembers().contains(principal.getName())) {
             throw new UserAuthorizationException();
         }
-        return messageDAO.getRecent(channelID, limit, offset);
+        return messageDAO.getRecent(channelID, recentMessagesQuery);
     }
 }

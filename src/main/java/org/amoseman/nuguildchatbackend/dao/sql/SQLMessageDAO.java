@@ -6,6 +6,7 @@ import org.amoseman.nuguildchatbackend.dao.exception.message.MessageDoesNotExist
 import org.amoseman.nuguildchatbackend.pojo.message.Message;
 import org.amoseman.nuguildchatbackend.pojo.message.MessageRecord;
 import org.amoseman.nuguildchatbackend.pojo.message.MessageUpdate;
+import org.amoseman.nuguildchatbackend.pojo.message.RecentMessagesQuery;
 import org.jooq.Record;
 import org.jooq.Result;
 
@@ -82,14 +83,14 @@ public class SQLMessageDAO implements MessageDAO {
     }
 
     @Override
-    public ImmutableList<MessageRecord> getRecent(long channelID, long limit, long offset) {
+    public ImmutableList<MessageRecord> getRecent(long channelID, RecentMessagesQuery recentMessagesQuery) {
         Result<Record> result = connection.create()
                 .select()
                 .from(table("messages"))
                 .where(field("channel").eq(channelID))
                 .orderBy(field("created"))
-                .limit(limit)
-                .offset(offset)
+                .limit(recentMessagesQuery.getLimit())
+                .offset(recentMessagesQuery.getOffset())
                 .fetch();
         List<MessageRecord> messages = new ArrayList<>();
         result.forEach(record -> messages.add(recordAsMessage(record)));

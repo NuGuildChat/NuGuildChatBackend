@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.Response;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserExistsException;
+import org.amoseman.nuguildchatbackend.pojo.user.Signup;
 import org.amoseman.nuguildchatbackend.pojo.user.UserUpdate;
 import org.amoseman.nuguildchatbackend.service.UserService;
 import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
@@ -21,9 +22,9 @@ public class UserResource {
     }
 
     @POST
-    public Response signup(String username, String password) {
+    public Response signup(Signup signup) {
         try {
-            userService.create(username, password);
+            userService.create(signup);
         }
         catch (UserExistsException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();

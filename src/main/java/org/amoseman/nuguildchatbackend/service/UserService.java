@@ -5,6 +5,7 @@ import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationExcep
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserExistsException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserModificationException;
+import org.amoseman.nuguildchatbackend.pojo.user.Signup;
 import org.amoseman.nuguildchatbackend.pojo.user.UserRecord;
 import org.amoseman.nuguildchatbackend.pojo.user.UserUpdate;
 import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
@@ -18,8 +19,8 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
-    public void create(String username, String password) throws UserExistsException {
-        userDAO.create(username, password);
+    public void create(Signup signup) throws UserExistsException {
+        userDAO.create(signup);
     }
 
     public void update(UserPrincipal principal, UserUpdate user) throws UserDoesNotExistException, UserAuthorizationException {

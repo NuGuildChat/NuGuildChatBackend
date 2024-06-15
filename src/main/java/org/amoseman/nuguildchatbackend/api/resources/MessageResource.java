@@ -9,6 +9,7 @@ import org.amoseman.nuguildchatbackend.dao.exception.message.MessageDoesNotExist
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserAuthorizationException;
 import org.amoseman.nuguildchatbackend.pojo.message.Message;
 import org.amoseman.nuguildchatbackend.pojo.message.MessageUpdate;
+import org.amoseman.nuguildchatbackend.pojo.message.RecentMessagesQuery;
 import org.amoseman.nuguildchatbackend.service.MessageService;
 import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 
@@ -45,9 +46,9 @@ public class MessageResource {
 
     @GET
     @Path("/{channel}")
-    public Response getMessages(@Auth UserPrincipal principal, @PathParam("channel") long channelID, long limit, long offset) {
+    public Response getMessages(@Auth UserPrincipal principal, @PathParam("channel") long channelID, RecentMessagesQuery recentMessagesQuery) {
         try {
-            return Response.ok(messageService.getRecent(principal, channelID, limit, offset)).build();
+            return Response.ok(messageService.getRecent(principal, channelID, recentMessagesQuery)).build();
         }
         catch (UserAuthorizationException | ChannelDoesNotExistException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();

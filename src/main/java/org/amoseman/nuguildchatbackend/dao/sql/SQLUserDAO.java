@@ -3,6 +3,7 @@ package org.amoseman.nuguildchatbackend.dao.sql;
 import org.amoseman.nuguildchatbackend.dao.UserDAO;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserDoesNotExistException;
 import org.amoseman.nuguildchatbackend.dao.exception.user.UserExistsException;
+import org.amoseman.nuguildchatbackend.pojo.user.Signup;
 import org.amoseman.nuguildchatbackend.pojo.user.UserRecord;
 import org.amoseman.nuguildchatbackend.pojo.user.UserUpdate;
 import org.amoseman.nuguildchatbackend.service.auth.UserAuthenticator;
@@ -34,9 +35,9 @@ public class SQLUserDAO implements UserDAO {
     }
 
     @Override
-    public void create(String username, String password) throws UserExistsException {
+    public void create(Signup signup) throws UserExistsException {
         long now = System.currentTimeMillis();
-        if (usernameInUse(username)) {
+        if (usernameInUse(signup.getUsername())) {
             throw new UserExistsException();
         }
         String salt = new String(UserAuthenticator.generateSalt(random));
@@ -52,12 +53,12 @@ public class SQLUserDAO implements UserDAO {
                         field("password_salt")
                 )
                 .values(
-                        username,
-                        username,
+                        signup.getUsername(),
+                        signup.getUsername(),
                         "",
                         now,
                         now,
-                        UserAuthenticator.hash(password, salt),
+                        UserAuthenticator.hash(signup.getPassword(), salt),
                         salt
                 )
                 .execute();
