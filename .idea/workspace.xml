@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Implement SQLChannelDAO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/sql/SQLUserDAO.java" afterDir="false" />
+    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Implement SQLUserDAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/pojo/user/UserRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/pojo/user/UserRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/auth/UserAuthenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/auth/UserAuthenticator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/auth/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/auth/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/resources/UserResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718372984552</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implement SQLUserDAO">
+      <option name="closed" value="true" />
+      <created>1718469135413</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718469135413</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,6 +174,7 @@
     <MESSAGE value="Refactor" />
     <MESSAGE value="Implement" />
     <MESSAGE value="Implement SQLChannelDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement SQLChannelDAO" />
+    <MESSAGE value="Implement SQLUserDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement SQLUserDAO" />
   </component>
 </project>
