@@ -1,9 +1,16 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'org.amoseman'
 version = '1.0-SNAPSHOT'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.amoseman.nuguildchatbackend.Main'
+    }
+}
 
 repositories {
     mavenCentral()
