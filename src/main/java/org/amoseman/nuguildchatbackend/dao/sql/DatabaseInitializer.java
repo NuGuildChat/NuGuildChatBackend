@@ -3,6 +3,7 @@ package org.amoseman.nuguildchatbackend.dao.sql;
 import org.amoseman.nuguildchatbackend.api.NuGuildChatConfiguration;
 import org.amoseman.nuguildchatbackend.service.auth.UserAuthenticator;
 
+import static org.jooq.impl.DSL.constraint;
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.SQLDataType.*;
 
@@ -30,6 +31,9 @@ public class DatabaseInitializer {
                 .column(field("created"), BIGINT)
                 .column(field("updated"), BIGINT)
                 .column(field("contents"), VARCHAR(configuration.getMaxMessageLength()))
+                .constraints(
+                        constraint("PK_MESSAGES").primaryKey("id")
+                )
                 .execute();
     }
 
@@ -44,6 +48,9 @@ public class DatabaseInitializer {
                 .column(field("created"), BIGINT)
                 .column(field("updated"), BIGINT)
                 .column(field("members"), VARCHAR(membersLength))
+                .constraints(
+                        constraint("PK_CHANNELS").primaryKey("id")
+                )
                 .execute();
 
     }
@@ -58,6 +65,9 @@ public class DatabaseInitializer {
                 .column(field("pronouns"), VARCHAR(configuration.getMaxPronounsLength()))
                 .column(field("created"), BIGINT)
                 .column(field("updated"), BIGINT)
+                .constraints(
+                        constraint("PK_USERS").primaryKey("username")
+                )
                 .execute();
 
     }
