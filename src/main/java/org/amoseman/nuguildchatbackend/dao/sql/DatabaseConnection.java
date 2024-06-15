@@ -13,9 +13,9 @@ public class DatabaseConnection {
     private final Connection connection;
     private final SQLDialect dialect;
 
-    public DatabaseConnection(String url) {
+    public DatabaseConnection(String url, String username, String password) {
         try {
-            this.connection = DriverManager.getConnection(url);
+            this.connection = DriverManager.getConnection(url, username, password);
             this.dialect = mapDialect(url);
         }
         catch (SQLException e) {

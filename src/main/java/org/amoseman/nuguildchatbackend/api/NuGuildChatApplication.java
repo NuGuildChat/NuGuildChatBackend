@@ -25,7 +25,7 @@ public class NuGuildChatApplication extends Application<NuGuildChatConfiguration
     public void run(NuGuildChatConfiguration configuration, Environment environment) throws Exception {
         SecureRandom random = new SecureRandom();
 
-        DatabaseConnection connection = new DatabaseConnection(configuration.getDatabaseURL());
+        DatabaseConnection connection = new DatabaseConnection(configuration.getDatabaseURL(), configuration.getDatabaseUsername(), configuration.getDatabasePassword());
         DatabaseInitializer initializer = new DatabaseInitializer(connection, configuration);
         initializer.init();
 
