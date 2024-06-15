@@ -23,7 +23,7 @@ public class MessageService {
 
     // todo: implement
     public void create(UserPrincipal principal, Message message) throws UserAuthorizationException {
-        if (!message.getAuthorUUID().equals(principal.getName())) {
+        if (!message.getAuthor().equals(principal.getName())) {
             throw new UserAuthorizationException();
         }
         messageDAO.create(message);
@@ -31,7 +31,7 @@ public class MessageService {
 
     public void update(UserPrincipal principal, MessageUpdate messageUpdate) throws UserAuthorizationException, MessageDoesNotExistException {
         MessageRecord current = messageDAO.get(messageUpdate.getID());
-        if (!current.getAuthorUUID().equals(principal.getName())) {
+        if (!current.getAuthor().equals(principal.getName())) {
             throw new UserAuthorizationException();
         }
         messageDAO.update(messageUpdate);
@@ -40,7 +40,7 @@ public class MessageService {
     public void delete(UserPrincipal principal, long id) throws UserAuthorizationException, MessageDoesNotExistException, ChannelDoesNotExistException {
         MessageRecord current = messageDAO.get(id);
         ChannelRecord channel = channelDAO.get(current.getChannelID());
-        if (!(channel.getAdminUsername().equals(principal.getName()) || current.getAuthorUUID().equals(principal.getName()))) {
+        if (!(channel.getAdminUsername().equals(principal.getName()) || current.getAuthor().equals(principal.getName()))) {
             throw new UserAuthorizationException();
         }
         messageDAO.delete(id);
