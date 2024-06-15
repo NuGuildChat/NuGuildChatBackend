@@ -3,10 +3,10 @@ package org.amoseman.nuguildchatbackend.service.auth;
 import java.security.Principal;
 
 public class UserPrincipal implements Principal {
-    private final String uuid;
+    private final String username;
 
-    public UserPrincipal(String uuid) {
-        this.uuid = uuid;
+    public UserPrincipal(String username) {
+        this.username = username;
     }
 
     @Override
@@ -17,16 +17,16 @@ public class UserPrincipal implements Principal {
 
     @Override
     public String toString() {
-        return uuid;
+        return username;
     }
 
     @Override
     public int hashCode() {
-        return uuid.hashCode();
+        return username.hashCode();
     }
 
     @Override
     public String getName() {
-        return uuid;
+        return username;
     }
 }

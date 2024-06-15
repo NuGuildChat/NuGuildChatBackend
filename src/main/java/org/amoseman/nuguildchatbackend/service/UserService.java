@@ -18,11 +18,11 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
-    public void create(UserPrincipal user) throws UserExistsException {
-        userDAO.create(user);
+    public void create(String username, String password) throws UserExistsException {
+        userDAO.create(username, password);
     }
 
-    public void update(UserPrincipal principal, UserUpdate user) throws UserDoesNotExistException, UserModificationException, UserAuthorizationException {
+    public void update(UserPrincipal principal, UserUpdate user) throws UserDoesNotExistException, UserAuthorizationException {
         if (!principal.getName().equals(user.getUsername())) {
             throw new UserAuthorizationException();
         }

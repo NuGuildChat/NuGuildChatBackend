@@ -10,9 +10,9 @@ import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 import java.util.List;
 
 public interface UserDAO {
-    void create(UserPrincipal user) throws UserExistsException;
+    void create(String username, String password) throws UserExistsException;
 
-    void update(UserUpdate user) throws UserDoesNotExistException, UserModificationException;
+    void update(UserUpdate user) throws UserDoesNotExistException;
     void delete(String username) throws UserDoesNotExistException;
     UserRecord get(String username) throws UserDoesNotExistException;
     List<UserRecord> getAll();
