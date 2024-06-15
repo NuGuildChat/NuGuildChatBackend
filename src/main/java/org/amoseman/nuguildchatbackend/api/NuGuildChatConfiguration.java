@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 public class NuGuildChatConfiguration extends Configuration {
     @NotEmpty
-    private final String databaseURL;
+    private String databaseURL;
     @NotEmpty
     private String databaseUsername;
     @NotEmpty
