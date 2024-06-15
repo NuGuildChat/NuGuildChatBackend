@@ -100,7 +100,7 @@ public class SQLMessageDAO implements MessageDAO {
     private MessageRecord recordAsMessage(Record record) {
         return new MessageRecord(
                 record.get(field("author"), String.class),
-                record.get(field("channel"), String.class),
+                record.get(field("channel"), Long.class),
                 record.get(field("contents"), String.class),
                 record.get(field("id"), Long.class),
                 record.get(field("created"), Long.class),
