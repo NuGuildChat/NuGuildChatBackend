@@ -18,6 +18,7 @@ import static org.jooq.impl.DSL.table;
 
 public class UserAuthenticator implements Authenticator<BasicCredentials, UserPrincipal> {
     public static final int HASH_LENGTH = 64;
+    public static final int SALT_LENGTH = 16;
     private final DatabaseConnection connection;
 
     public UserAuthenticator(DatabaseConnection connection) {
@@ -45,7 +46,7 @@ public class UserAuthenticator implements Authenticator<BasicCredentials, UserPr
     }
 
     public static byte[] generateSalt(SecureRandom random) {
-        byte[] salt = new byte[16];
+        byte[] salt = new byte[SALT_LENGTH];
         random.nextBytes(salt);
         return salt;
     }

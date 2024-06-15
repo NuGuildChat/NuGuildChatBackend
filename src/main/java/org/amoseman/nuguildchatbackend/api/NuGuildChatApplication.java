@@ -11,10 +11,7 @@ import org.amoseman.nuguildchatbackend.api.resources.UserResource;
 import org.amoseman.nuguildchatbackend.dao.ChannelDAO;
 import org.amoseman.nuguildchatbackend.dao.MessageDAO;
 import org.amoseman.nuguildchatbackend.dao.UserDAO;
-import org.amoseman.nuguildchatbackend.dao.sql.DatabaseConnection;
-import org.amoseman.nuguildchatbackend.dao.sql.SQLChannelDAO;
-import org.amoseman.nuguildchatbackend.dao.sql.SQLMessageDAO;
-import org.amoseman.nuguildchatbackend.dao.sql.SQLUserDAO;
+import org.amoseman.nuguildchatbackend.dao.sql.*;
 import org.amoseman.nuguildchatbackend.service.ChannelService;
 import org.amoseman.nuguildchatbackend.service.MessageService;
 import org.amoseman.nuguildchatbackend.service.UserService;
@@ -27,7 +24,10 @@ public class NuGuildChatApplication extends Application<NuGuildChatConfiguration
     @Override
     public void run(NuGuildChatConfiguration configuration, Environment environment) throws Exception {
         SecureRandom random = new SecureRandom();
+
         DatabaseConnection connection = new DatabaseConnection(configuration.getDatabaseURL());
+        DatabaseInitializer initializer = new DatabaseInitializer(connection, configuration);
+        initializer.init();
 
         UserAuthenticator userAuthenticator = new UserAuthenticator(connection);
         environment.jersey().register(

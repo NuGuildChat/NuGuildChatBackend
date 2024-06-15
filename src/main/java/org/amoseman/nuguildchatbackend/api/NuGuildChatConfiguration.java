@@ -11,9 +11,21 @@ public class NuGuildChatConfiguration extends Configuration {
     private String databaseUsername;
     @NotEmpty
     private String databasePassword;
+    @NotEmpty
+    private int maxUsernameLength;
+    @NotEmpty
+    private int maxPasswordLength;
+    @NotEmpty
+    private int maxMessageLength;
+    @NotEmpty
+    private int maxChannelNameLength;
+    @NotEmpty
+    private int maxChannelMembers;
+
+    @NotEmpty
+    private int maxPronounsLength;
 
     @JsonProperty
-
     public String getDatabaseURL() {
         return databaseURL;
     }
@@ -36,5 +48,70 @@ public class NuGuildChatConfiguration extends Configuration {
     @JsonProperty
     public void setDatabasePassword(String databasePassword) {
         this.databasePassword = databasePassword;
+    }
+
+    @JsonProperty
+    public void setDatabaseURL(String databaseURL) {
+        this.databaseURL = databaseURL;
+    }
+
+    @JsonProperty
+    public int getMaxUsernameLength() {
+        return maxUsernameLength;
+    }
+
+    @JsonProperty
+    public void setMaxUsernameLength(int maxUsernameLength) {
+        this.maxUsernameLength = maxUsernameLength;
+    }
+
+    @JsonProperty
+    public int getMaxPasswordLength() {
+        return maxPasswordLength;
+    }
+
+    @JsonProperty
+    public void setMaxPasswordLength(int maxPasswordLength) {
+        this.maxPasswordLength = maxPasswordLength;
+    }
+
+    @JsonProperty
+    public int getMaxMessageLength() {
+        return maxMessageLength;
+    }
+
+    @JsonProperty
+    public void setMaxMessageLength(int maxMessageLength) {
+        this.maxMessageLength = maxMessageLength;
+    }
+
+    @JsonProperty
+    public int getMaxChannelNameLength() {
+        return maxChannelNameLength;
+    }
+
+    @JsonProperty
+    public void setMaxChannelNameLength(int maxChannelNameLength) {
+        this.maxChannelNameLength = maxChannelNameLength;
+    }
+
+    @JsonProperty
+    public int getMaxChannelMembers() {
+        return maxChannelMembers;
+    }
+
+    @JsonProperty
+    public void setMaxChannelMembers(int maxChannelMembers) {
+        this.maxChannelMembers = maxChannelMembers;
+    }
+
+    @JsonProperty
+    public int getMaxPronounsLength() {
+        return maxPronounsLength;
+    }
+
+    @JsonProperty
+    public void setMaxPronounsLength(int maxPronounsLength) {
+        this.maxPronounsLength = maxPronounsLength;
     }
 }
