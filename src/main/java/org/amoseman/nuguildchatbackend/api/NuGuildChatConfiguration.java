@@ -16,14 +16,14 @@ public class NuGuildChatConfiguration extends Configuration {
     @NotEmpty
     private int maxPasswordLength;
     @NotEmpty
+    private int maxPronounsLength;
+    @NotEmpty
     private int maxMessageLength;
     @NotEmpty
     private int maxChannelNameLength;
     @NotEmpty
     private int maxChannelMembers;
 
-    @NotEmpty
-    private int maxPronounsLength;
 
     @JsonProperty
     public String getDatabaseURL() {
