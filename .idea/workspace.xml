@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Fix how message retrieval is handled">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Remove AccountResource">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/pojo/message/MessageRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/pojo/message/MessageRecord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,19 +54,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/glyphical/Projects/idea_projects/NuGuildChatBackend/src/main/java/org/amoseman&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/glyphical/Projects/idea_projects/NuGuildChatBackend/src/main/java/org/amoseman/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.NuGuildChatBackend [:Main.main()].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/glyphical/Projects/idea_projects/NuGuildChatBackend/src/main/java/org/amoseman",
+    "onboarding.tips.debug.path": "/home/glyphical/Projects/idea_projects/NuGuildChatBackend/src/main/java/org/amoseman/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/org/amoseman" />
@@ -198,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718471566861</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Remove AccountResource">
+      <option name="closed" value="true" />
+      <created>1718471764495</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718471764495</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -209,6 +218,7 @@
     <MESSAGE value="Implement SQLUserDAO" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Fix how message retrieval is handled" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix how message retrieval is handled" />
+    <MESSAGE value="Remove AccountResource" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove AccountResource" />
   </component>
 </project>
