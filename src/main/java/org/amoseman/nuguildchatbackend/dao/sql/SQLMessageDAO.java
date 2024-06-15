@@ -82,11 +82,14 @@ public class SQLMessageDAO implements MessageDAO {
     }
 
     @Override
-    public ImmutableList<MessageRecord> getAll(long channelID) {
+    public ImmutableList<MessageRecord> getRecent(long channelID, long limit, long offset) {
         Result<Record> result = connection.create()
                 .select()
                 .from(table("messages"))
                 .where(field("channel").eq(channelID))
+                .orderBy(field("created"))
+                .limit(limit)
+                .offset(offset)
                 .fetch();
         List<MessageRecord> messages = new ArrayList<>();
         result.forEach(record -> messages.add(recordAsMessage(record)));

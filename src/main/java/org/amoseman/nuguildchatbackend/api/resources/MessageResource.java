@@ -45,9 +45,9 @@ public class MessageResource {
 
     @GET
     @Path("/{channel}")
-    public Response getMessages(@Auth UserPrincipal principal, @PathParam("channel") long channelID) {
+    public Response getMessages(@Auth UserPrincipal principal, @PathParam("channel") long channelID, long limit, long offset) {
         try {
-            return Response.ok(messageService.getAll(principal, channelID)).build();
+            return Response.ok(messageService.getRecent(principal, channelID, limit, offset)).build();
         }
         catch (UserAuthorizationException | ChannelDoesNotExistException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();

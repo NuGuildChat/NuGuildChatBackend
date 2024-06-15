@@ -45,11 +45,12 @@ public class MessageService {
         }
         messageDAO.delete(id);
     }
-    public ImmutableList<MessageRecord> getAll(UserPrincipal principal, long channelID) throws UserAuthorizationException, ChannelDoesNotExistException {
+
+    public ImmutableList<MessageRecord> getRecent(UserPrincipal principal, long channelID, long limit, long offset) throws UserAuthorizationException, ChannelDoesNotExistException {
         ChannelRecord channel = channelDAO.get(channelID);
         if (channel.isClosed() && !channel.getMembers().contains(principal.getName())) {
             throw new UserAuthorizationException();
         }
-        return messageDAO.getAll(channelID);
+        return messageDAO.getRecent(channelID, limit, offset);
     }
 }

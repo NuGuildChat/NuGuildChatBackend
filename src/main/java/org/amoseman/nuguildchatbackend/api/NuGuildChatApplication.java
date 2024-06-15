@@ -7,12 +7,17 @@ import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Environment;
 import org.amoseman.nuguildchatbackend.api.resources.ChannelResource;
 import org.amoseman.nuguildchatbackend.api.resources.MessageResource;
+import org.amoseman.nuguildchatbackend.api.resources.UserResource;
 import org.amoseman.nuguildchatbackend.dao.ChannelDAO;
 import org.amoseman.nuguildchatbackend.dao.MessageDAO;
+import org.amoseman.nuguildchatbackend.dao.UserDAO;
 import org.amoseman.nuguildchatbackend.dao.sql.DatabaseConnection;
+import org.amoseman.nuguildchatbackend.dao.sql.SQLChannelDAO;
 import org.amoseman.nuguildchatbackend.dao.sql.SQLMessageDAO;
+import org.amoseman.nuguildchatbackend.dao.sql.SQLUserDAO;
 import org.amoseman.nuguildchatbackend.service.ChannelService;
 import org.amoseman.nuguildchatbackend.service.MessageService;
+import org.amoseman.nuguildchatbackend.service.UserService;
 import org.amoseman.nuguildchatbackend.service.auth.UserAuthenticator;
 import org.amoseman.nuguildchatbackend.service.auth.UserPrincipal;
 
@@ -34,15 +39,19 @@ public class NuGuildChatApplication extends Application<NuGuildChatConfiguration
         environment.jersey().register(new AuthValueFactoryProvider.Binder<>(UserPrincipal.class));
 
         MessageDAO messageDAO = new SQLMessageDAO(connection);
-        ChannelDAO channelDAO = null; // todo
+        ChannelDAO channelDAO = new SQLChannelDAO(connection);
+        UserDAO userDAO = new SQLUserDAO(random, connection);
 
         MessageService messageService = new MessageService(messageDAO, channelDAO);
         ChannelService channelService = new ChannelService(channelDAO);
+        UserService userService = new UserService(userDAO);
 
         MessageResource messageResource = new MessageResource(messageService);
         ChannelResource channelResource = new ChannelResource(channelService);
+        UserResource userResource  = new UserResource(userService);
 
         environment.jersey().register(messageResource);
         environment.jersey().register(channelResource);
+        environment.jersey().register(userResource);
     }
 }

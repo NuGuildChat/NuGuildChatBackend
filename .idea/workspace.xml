@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Implement SQLUserDAO">
+    <list default="true" id="a9a33c2e-d523-41fc-89d1-7c5c20c9ee5b" name="Changes" comment="Refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/resources/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/NuGuildChatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/NuGuildChatApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/resources/MessageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/api/resources/MessageResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/MessageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/MessageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/sql/SQLMessageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/dao/sql/SQLMessageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/amoseman/nuguildchatbackend/service/MessageService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,16 +169,24 @@
       <option name="project" value="LOCAL" />
       <updated>1718469135413</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1718469178713</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718469178713</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
     <MESSAGE value="Initial commit" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Implement" />
     <MESSAGE value="Implement SQLChannelDAO" />
     <MESSAGE value="Implement SQLUserDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement SQLUserDAO" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
 </project>
