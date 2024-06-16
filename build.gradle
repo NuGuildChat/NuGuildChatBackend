@@ -7,10 +7,17 @@ group = 'org.amoseman'
 version = '1.0-SNAPSHOT'
 
 
+
 jar {
     manifest {
         attributes 'Main-Class': 'org.amoseman.nuguildchatbackend.Main'
     }
+}
+
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
 }
 
 repositories {
