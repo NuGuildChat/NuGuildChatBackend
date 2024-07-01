@@ -15,12 +15,43 @@ public class TagService {
         tagDAO.list().forEach(tag -> tags.put(tag.getName(), tag));
     }
 
+    public boolean match(Tag tag, Tag target) {
+        if (!exists(tag) || !exists(target)) {
+            return false;
+        }
+        return matchHelper(tag, target);
+    }
+
+    private boolean matchHelper(Tag current, Tag target) {
+        if (current.equals(target)) {
+            return true;
+        }
+        for (String child : current.getChildren()) {
+            if (matchHelper(get(child), target)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Tag get(String name) {
+        return tags.get(name);
+    }
+
+    public boolean exists(String name) {
+        return tags.containsKey(name);
+    }
+
+    public boolean exists(Tag tag) {
+        return exists(tag.getName());
+    }
+
     public boolean put(Tag tag) {
-        for (Tag child : tag.getChildren()) {
-            if (!tags.containsKey(child.getName())) {
+        for (String child : tag.getChildren()) {
+            if (!exists(child)) {
                 return false;
             }
-            if (child.match(tag)) { // check for loops
+            if (match(tag, get(child))) { // check for loops
                 return false;
             }
         }
@@ -30,7 +61,7 @@ public class TagService {
     }
 
     public boolean remove(Tag tag) {
-        if (!tags.containsKey(tag.getName())) {
+        if (!exists(tag)) {
             return false;
         }
         tags.remove(tag.getName());

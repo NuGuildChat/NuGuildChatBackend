@@ -7,14 +7,14 @@ import com.google.common.collect.ImmutableList;
  */
 public class Tag {
     private final String name;
-    private final ImmutableList<Tag> children;
+    private final ImmutableList<String> children;
 
     /**
      * Instantiate a tag.
      * @param name the unique name of the tag.
-     * @param children the child tags of the tag.
+     * @param children the names of the children tags.
      */
-    public Tag(String name, ImmutableList<Tag> children) {
+    public Tag(String name, ImmutableList<String> children) {
         this.name = name;
         this.children = children;
     }
@@ -43,33 +43,11 @@ public class Tag {
         return target.name.equals(name);
     }
 
-    /**
-     * Determine if this tag is the target, or one of its children is the target.
-     * @param target the target tag.
-     * @return the result of the match check.
-     */
-    public boolean match(Tag target) {
-        return searchHelper(target, this);
-    }
-
-    private boolean searchHelper(Tag target, Tag current) {
-        if (current.name.equals(target.name)) {
-            return true;
-        }
-        ImmutableList<Tag> children = current.children;
-        for (Tag child : children) {
-            if (searchHelper(target, child)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public String getName() {
         return name;
     }
 
-    public ImmutableList<Tag> getChildren() {
+    public ImmutableList<String> getChildren() {
         return children;
     }
 }
