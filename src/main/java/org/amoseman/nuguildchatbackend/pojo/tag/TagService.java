@@ -15,6 +15,28 @@ public class TagService {
         tagDAO.list().forEach(tag -> tags.put(tag.getName(), tag));
     }
 
+    public TagStats stats(Tag tag) {
+        return statsHelper(tag, 0, 0);
+    }
+
+    private TagStats statsHelper(Tag current, int depth, int count) {
+        int children = current.getChildren().size();
+        TagStats[] stats = new TagStats[children];
+        for (int i = 0; i < children; i++) {
+            Tag child = get(current.getChildren().get(i));
+            stats[i] = statsHelper(child, depth + 1, count + children);
+        }
+        int d = depth;
+        int c = children;
+        for (TagStats stat : stats) {
+            c += stat.childCount();
+            if (stat.treeDepth() > d) {
+                d = stat.treeDepth();
+            }
+        }
+        return new TagStats(d, c);
+    }
+
     public boolean match(Tag tag, Tag target) {
         if (!exists(tag) || !exists(target)) {
             return false;
