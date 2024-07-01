@@ -49,7 +49,7 @@ public class Tag {
         }
         ImmutableList<Tag> children = current.children;
         for (Tag child : children) {
-            if (equalsHelper(target, child)) {
+            if (searchHelper(target, child)) {
                 return true;
             }
         }
