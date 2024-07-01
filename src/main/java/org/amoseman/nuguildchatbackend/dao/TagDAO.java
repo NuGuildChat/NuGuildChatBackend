@@ -1,6 +1,7 @@
-package org.amoseman.nuguildchatbackend.pojo.tag;
+package org.amoseman.nuguildchatbackend.dao;
 
 import com.google.common.collect.ImmutableList;
+import org.amoseman.nuguildchatbackend.pojo.tag.Tag;
 
 public interface TagDAO {
     TagDAO SINGLETON = new TagDAO() {

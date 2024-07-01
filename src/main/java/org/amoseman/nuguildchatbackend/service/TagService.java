@@ -1,6 +1,9 @@
-package org.amoseman.nuguildchatbackend.pojo.tag;
+package org.amoseman.nuguildchatbackend.service;
 
 import com.google.common.collect.ImmutableList;
+import org.amoseman.nuguildchatbackend.dao.TagDAO;
+import org.amoseman.nuguildchatbackend.pojo.tag.Tag;
+import org.amoseman.nuguildchatbackend.pojo.tag.TagStats;
 
 import java.util.HashMap;
 import java.util.Map;
