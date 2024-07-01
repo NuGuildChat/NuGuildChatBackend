@@ -19,6 +19,15 @@ public class Tag {
         this.children = children;
     }
 
+    /**
+     * Instantiate a tag.
+     * @param name the unique name of the tag.
+     */
+    public Tag(String name) {
+        this.name = name;
+        this.children = ImmutableList.of();
+    }
+
     @Override
     public boolean equals(Object t) {
         if (null == t) {
