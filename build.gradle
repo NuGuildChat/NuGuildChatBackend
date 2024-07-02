@@ -6,8 +6,6 @@ plugins {
 group = 'org.amoseman'
 version = '1.0-SNAPSHOT'
 
-
-
 jar {
     manifest {
         attributes 'Main-Class': 'org.amoseman.nuguildchatbackend.Main'
@@ -41,7 +39,6 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
     implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.0'
-
 
     // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on
     implementation 'org.bouncycastle:bcprov-jdk18on:1.78.1'
